@@ -1,7 +1,6 @@
 package userTest;
 
 import org.testng.annotations.Test;
-
 import utility.CommonMethods;
 
 public class UserCreateVerify extends CommonMethods
