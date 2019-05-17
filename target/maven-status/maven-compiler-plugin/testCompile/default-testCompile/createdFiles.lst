@@ -1,0 +1,7 @@
+utility\CommonMethods.class
+initializeClass\BrowserFactory.class
+pagesAdmin\UserPage.class
+userTest\VerifyLogin.class
+pagesAdmin\LoginPage.class
+initializeClass\Initial.class
+userTest\UserCreateVerify.class
