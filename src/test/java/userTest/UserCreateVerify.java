@@ -7,7 +7,7 @@ import utility.CommonMethods;
 public class UserCreateVerify extends CommonMethods
 {
 	
-	@Test
+	@Test(priority=0)
 	public void createUser() throws Exception
 	{
 	

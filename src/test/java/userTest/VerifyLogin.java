@@ -7,7 +7,7 @@ import utility.CommonMethods;
 public class VerifyLogin extends CommonMethods
 {
 
-	@Test
+	@Test(priority=0)
 	public void verifyLogin()
 	{
 		test=extent.createTest("VerifyLogin").pass("Able to login with valid credentials");
