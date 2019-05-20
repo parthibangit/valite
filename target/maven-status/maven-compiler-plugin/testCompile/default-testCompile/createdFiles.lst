@@ -5,3 +5,4 @@ userTest\VerifyLogin.class
 pagesAdmin\LoginPage.class
 initializeClass\Initial.class
 userTest\UserCreateVerify.class
+utility\Screenshot.class

@@ -1,11 +1,8 @@
 package utility;
 
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
-
 import initializeClass.Initial;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 
 public class CommonMethods extends Initial
 {
@@ -24,7 +21,7 @@ public class CommonMethods extends Initial
 	public void getText()
 	{
 		String actualText=loginLocators.dashBoard_locator.getText();
-		String expectedText= "Quick Links";
+		String expectedText= "Quick Link";
 		System.out.println("Actutal text is: "+actualText);
 		System.out.println("Expected text is: "+expectedText);
 		Assert.assertEquals(actualText, expectedText, "Text not matched - Test failed");

@@ -9,15 +9,14 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
-
+import pagesAdmin.LoginPage;
+import pagesAdmin.UserPage;
+import utility.Screenshot;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
-
-import pagesAdmin.LoginPage;
-import pagesAdmin.UserPage;
 
 public class Initial 
 {
@@ -32,7 +31,7 @@ public class Initial
 	@BeforeSuite
 	public void reportSetUp()
 	{
-		ExtentHtmlReporter htmlReporter=new ExtentHtmlReporter("./screenshots/extentReports.html");
+		ExtentHtmlReporter htmlReporter=new ExtentHtmlReporter("./Test Report/extentReports.html");
 		//htmlReporter.setAppendExisting(true);
 		htmlReporter.config().setDocumentTitle("Automation report");
 		htmlReporter.config().setReportName("Functional Test");
@@ -57,7 +56,7 @@ public class Initial
 	
 	
 	@AfterMethod
-	public void afterMethod(ITestResult result)
+	public void afterMethod(ITestResult result) throws Exception
 	{
 		System.out.println("==========Test Execution finished==========");
 		
@@ -68,13 +67,14 @@ public class Initial
 		
 		else if(result.getStatus()==ITestResult.FAILURE)
 		{
-			test.pass(MarkupHelper.createLabel(result.getName() +" Test case Failed", ExtentColor.RED));
+			test.fail(MarkupHelper.createLabel(result.getName() +" Test case Failed", ExtentColor.RED));
+		    Screenshot.takeScreenshot(globalDriver, result.getName());
 			test.fail(result.getThrowable());
 		}
 		
 		else if(result.getStatus()==ITestResult.SKIP)
 		{
-			test.pass(MarkupHelper.createLabel(result.getName() +" Test case Skipped", ExtentColor.YELLOW));
+			test.skip(MarkupHelper.createLabel(result.getName() +" Test case Skipped", ExtentColor.YELLOW));
 		}
 			
 	}
@@ -90,7 +90,4 @@ public class Initial
 	{
 		extent.flush();
 	}
-	
-	
-
 }

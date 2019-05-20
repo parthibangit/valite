@@ -2,71 +2,37 @@
 <testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="81883" started-at="2019-05-17T06:58:54Z" finished-at="2019-05-17T07:00:16Z">
+  <suite name="Default suite" duration-ms="60142" started-at="2019-05-20T06:39:58Z" finished-at="2019-05-20T06:40:59Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="81883" started-at="2019-05-17T06:58:54Z" finished-at="2019-05-17T07:00:16Z">
-      <class name="userTest.UserCreateVerify">
-        <test-method status="PASS" signature="reportSetUp()[pri:0, instance:userTest.UserCreateVerify@5c3bd550]" name="reportSetUp" is-config="true" duration-ms="334" started-at="2019-05-17T06:58:54Z" finished-at="2019-05-17T06:58:54Z">
+    <test name="Default test" duration-ms="60142" started-at="2019-05-20T06:39:58Z" finished-at="2019-05-20T06:40:59Z">
+      <class name="userTest.VerifyLogin">
+        <test-method status="PASS" signature="reportSetUp()[pri:0, instance:userTest.VerifyLogin@5c3bd550]" name="reportSetUp" is-config="true" duration-ms="379" started-at="2019-05-20T06:39:58Z" finished-at="2019-05-20T06:39:58Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- reportSetUp -->
-        <test-method status="PASS" signature="initialization()[pri:0, instance:userTest.UserCreateVerify@5c3bd550]" name="initialization" is-config="true" duration-ms="46812" started-at="2019-05-17T06:58:54Z" finished-at="2019-05-17T06:59:41Z">
+        <test-method status="PASS" signature="initialization()[pri:0, instance:userTest.VerifyLogin@5c3bd550]" name="initialization" is-config="true" duration-ms="51540" started-at="2019-05-20T06:39:58Z" finished-at="2019-05-20T06:40:50Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialization -->
-        <test-method status="PASS" signature="beforePrint()[pri:0, instance:userTest.UserCreateVerify@5c3bd550]" name="beforePrint" is-config="true" duration-ms="0" started-at="2019-05-17T06:59:41Z" finished-at="2019-05-17T06:59:41Z">
+        <test-method status="PASS" signature="beforePrint()[pri:0, instance:userTest.VerifyLogin@5c3bd550]" name="beforePrint" is-config="true" duration-ms="1" started-at="2019-05-20T06:40:50Z" finished-at="2019-05-20T06:40:50Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforePrint -->
-        <test-method status="FAIL" signature="createUser()[pri:0, instance:userTest.UserCreateVerify@5c3bd550]" name="createUser" duration-ms="34458" started-at="2019-05-17T06:59:41Z" finished-at="2019-05-17T07:00:16Z">
-          <exception class="org.openqa.selenium.NoSuchElementException">
+        <test-method status="FAIL" signature="verifyLogin()[pri:0, instance:userTest.VerifyLogin@5c3bd550]" name="verifyLogin" duration-ms="7680" started-at="2019-05-20T06:40:50Z" finished-at="2019-05-20T06:40:58Z">
+          <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"id","selector":"//span[@class='MuiTypography-root-152 MuiTypography-subheading-159 MuiListItemText-primary-149'][contains(text(),'Users')]"}
-  (Session info: chrome=74.0.3729.157)
-  (Driver info: chromedriver=2.44.609538 (b655c5a60b0b544917107a59d4153d4bf78e1b90),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'USER-PC', ip: '192.168.56.1', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_151'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.44.609538 (b655c5a60b0b54..., userDataDir: C:\Users\user\AppData\Local...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:64688}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 74.0.3729.157, webStorageEnabled: true}
-Session ID: 6dd4af3b6f3926c8e2da293acfe5de53
-*** Element info: {Using=id, value=//span[@class='MuiTypography-root-152 MuiTypography-subheading-159 MuiListItemText-primary-149'][contains(text(),'Users')]}]]>
+              <![CDATA[Text not matched - Test failed expected [Quick Link] but found [Quick Links]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"id","selector":"//span[@class='MuiTypography-root-152 MuiTypography-subheading-159 MuiListItemText-primary-149'][contains(text(),'Users')]"}
-  (Session info: chrome=74.0.3729.157)
-  (Driver info: chromedriver=2.44.609538 (b655c5a60b0b544917107a59d4153d4bf78e1b90),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'USER-PC', ip: '192.168.56.1', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_151'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.44.609538 (b655c5a60b0b54..., userDataDir: C:\Users\user\AppData\Local...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:64688}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 74.0.3729.157, webStorageEnabled: true}
-Session ID: 6dd4af3b6f3926c8e2da293acfe5de53
-*** Element info: {Using=id, value=//span[@class='MuiTypography-root-152 MuiTypography-subheading-159 MuiListItemText-primary-149'][contains(text(),'Users')]}
-at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
-at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
-at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
-at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
-at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)
-at org.openqa.selenium.By$ById.findElement(By.java:188)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at com.sun.proxy.$Proxy13.click(Unknown Source)
-at utility.CommonMethods.navigateToUser(CommonMethods.java:37)
-at userTest.UserCreateVerify.createUser(UserCreateVerify.java:16)
+              <![CDATA[java.lang.AssertionError: Text not matched - Test failed expected [Quick Link] but found [Quick Links]
+at org.testng.Assert.fail(Assert.java:96)
+at org.testng.Assert.failNotEquals(Assert.java:776)
+at org.testng.Assert.assertEqualsImpl(Assert.java:137)
+at org.testng.Assert.assertEquals(Assert.java:118)
+at org.testng.Assert.assertEquals(Assert.java:453)
+at utility.CommonMethods.getText(CommonMethods.java:27)
+at userTest.VerifyLogin.verifyLogin(VerifyLogin.java:15)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -94,30 +60,30 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- createUser -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:userTest.UserCreateVerify@5c3bd550]" name="afterMethod" is-config="true" duration-ms="15" started-at="2019-05-17T07:00:16Z" finished-at="2019-05-17T07:00:16Z">
+        </test-method> <!-- verifyLogin -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:userTest.VerifyLogin@5c3bd550]" name="afterMethod" is-config="true" duration-ms="630" started-at="2019-05-20T06:40:58Z" finished-at="2019-05-20T06:40:58Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=createUser status=FAILURE method=UserCreateVerify.createUser()[pri:0, instance:userTest.UserCreateVerify@5c3bd550] output={null}]]]>
+                <![CDATA[[TestResult name=verifyLogin status=FAILURE method=VerifyLogin.verifyLogin()[pri:0, instance:userTest.VerifyLogin@5c3bd550] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:userTest.UserCreateVerify@5c3bd550]" name="tearDown" is-config="true" duration-ms="401" started-at="2019-05-17T07:00:16Z" finished-at="2019-05-17T07:00:16Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:userTest.VerifyLogin@5c3bd550]" name="tearDown" is-config="true" duration-ms="223" started-at="2019-05-20T06:40:58Z" finished-at="2019-05-20T06:40:59Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="extentClose()[pri:0, instance:userTest.UserCreateVerify@5c3bd550]" name="extentClose" is-config="true" duration-ms="815" started-at="2019-05-17T07:00:16Z" finished-at="2019-05-17T07:00:17Z">
+        <test-method status="PASS" signature="extentClose()[pri:0, instance:userTest.VerifyLogin@5c3bd550]" name="extentClose" is-config="true" duration-ms="1027" started-at="2019-05-20T06:40:59Z" finished-at="2019-05-20T06:41:00Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- extentClose -->
-      </class> <!-- userTest.UserCreateVerify -->
+      </class> <!-- userTest.VerifyLogin -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

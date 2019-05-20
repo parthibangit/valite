@@ -1,19 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 60.414 s <<< FAILURE! - in TestSuite
-createUser(userTest.UserCreateVerify)  Time elapsed: 34.586 s  <<< FAILURE!
-org.openqa.selenium.NoSuchElementException: 
-no such element: Unable to locate element: {"method":"id","selector":"//span[@class='MuiTypography-root-152 MuiTypography-subheading-159 MuiListItemText-primary-149'][contains(text(),'Users')]"}
-  (Session info: chrome=74.0.3729.157)
-  (Driver info: chromedriver=2.44.609538 (b655c5a60b0b544917107a59d4153d4bf78e1b90),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'USER-PC', ip: '192.168.56.1', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_151'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.44.609538 (b655c5a60b0b54..., userDataDir: C:\Users\user\AppData\Local...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:64623}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 74.0.3729.157, webStorageEnabled: true}
-Session ID: ff6da31c925189222622689d35088ea7
-*** Element info: {Using=id, value=//span[@class='MuiTypography-root-152 MuiTypography-subheading-159 MuiListItemText-primary-149'][contains(text(),'Users')]}
-	at userTest.UserCreateVerify.createUser(UserCreateVerify.java:16)
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 64.215 s <<< FAILURE! - in TestSuite
+verifyLogin(userTest.VerifyLogin)  Time elapsed: 7.433 s  <<< FAILURE!
+java.lang.AssertionError: Text not matched - Test failed expected [Quick Link] but found [Quick Links]
+	at userTest.VerifyLogin.verifyLogin(VerifyLogin.java:15)
 

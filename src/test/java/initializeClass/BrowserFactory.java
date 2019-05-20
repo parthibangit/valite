@@ -1,9 +1,9 @@
 package initializeClass;
 
 import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class BrowserFactory 
@@ -17,7 +17,9 @@ public class BrowserFactory
 		if(browser.equalsIgnoreCase("chrome"))	
 		{
 			System.setProperty("webdriver.chrome.driver", "E:\\Parthiban Sys\\selenium files\\browser drivers\\Chrome New\\chromedriver.exe");
-			driver=new ChromeDriver();	
+			ChromeOptions options=new ChromeOptions();
+			options.addArguments("--headless");
+			driver=new ChromeDriver(options);	
 		}
 		
 		else if(browser.equalsIgnoreCase("firefox"))	

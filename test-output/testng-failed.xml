@@ -3,17 +3,17 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="userTest.UserCreateVerify">
+      <class name="userTest.VerifyLogin">
         <methods>
           <include name="reportSetUp"/>
           <include name="initialization"/>
           <include name="extentClose"/>
           <include name="tearDown"/>
           <include name="afterMethod"/>
-          <include name="createUser"/>
+          <include name="verifyLogin"/>
           <include name="beforePrint"/>
         </methods>
-      </class> <!-- userTest.UserCreateVerify -->
+      </class> <!-- userTest.VerifyLogin -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
