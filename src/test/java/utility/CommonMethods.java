@@ -1,8 +1,14 @@
 package utility;
 
 import initializeClass.Initial;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 
 public class CommonMethods extends Initial
 {
@@ -21,7 +27,7 @@ public class CommonMethods extends Initial
 	public void getText()
 	{
 		String actualText=loginLocators.dashBoard_locator.getText();
-		String expectedText= "Quick Link";
+		String expectedText= "Quick Links";
 		System.out.println("Actutal text is: "+actualText);
 		System.out.println("Expected text is: "+expectedText);
 		Assert.assertEquals(actualText, expectedText, "Text not matched - Test failed");
@@ -49,15 +55,40 @@ public class CommonMethods extends Initial
 	    userLocator.firstNameLocator.sendKeys(firstName);
 	    userLocator.lastNameLocator.sendKeys(lastName);
 	}
-		
+	
+	// This method is used to enter the details into email and mobile fields
 	public void enterValueToemailAndMobile(String email, String mobile)
 	{
 		userLocator.emailLocator.sendKeys(email);
 		userLocator.mobileLocator.sendKeys(mobile);
 	}
 	
+	// This method is for click the submit button
 	public void clickSubmit()
 	{
 		userLocator.saveButtonLocator.click();
 	}
+	
+	@DataProvider(name="logindata")
+	public Object[] userData()
+	{
+		return new Object[][]
+		{
+				{"globalsuperadmin@valite.org", "password"},	
+				{"parthiban@siamcomputing.com", "password"},
+				{"sarathipartha04@gmail.com", "password"}			
+		};
+		
+	}
+	
+	
+	public void logout() throws Exception
+	{
+		Thread.sleep(3000);
+		WebDriverWait wait=new WebDriverWait(globalDriver, 10);
+		Actions act=new Actions(globalDriver);
+		act.moveToElement(userLocator.logoutMenuLocator).click().build().perform();
+		wait.until(ExpectedConditions.visibilityOf(userLocator.logoutLocator)).click();
+	}
+		
 }

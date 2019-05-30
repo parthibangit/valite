@@ -1,7 +1,5 @@
 package pagesAdmin;
 
-import java.util.List;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -16,6 +14,12 @@ public class UserPage
 	{
 		this.driver=driver;
 	}
+	
+	@FindBy(how=How.XPATH, using="//button[@type='button']//i[@class='fa fa-user']")
+	public WebElement logoutMenuLocator;
+	
+	@FindBy(how=How.XPATH, using="//li[contains(text(),'Logout')]")
+	public WebElement logoutLocator;
 	
 	@FindBy(how=How.ID, using="//span[@class='MuiTypography-root-152 MuiTypography-subheading-159 MuiListItemText-primary-149'][contains(text(),'Users')]")
 	public WebElement userMenuLocator;;

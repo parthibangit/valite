@@ -1,8 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 64.215 s <<< FAILURE! - in TestSuite
-verifyLogin(userTest.VerifyLogin)  Time elapsed: 7.433 s  <<< FAILURE!
-java.lang.AssertionError: Text not matched - Test failed expected [Quick Link] but found [Quick Links]
-	at userTest.VerifyLogin.verifyLogin(VerifyLogin.java:15)
-
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 68.723 s - in TestSuite

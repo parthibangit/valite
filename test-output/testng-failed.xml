@@ -10,7 +10,7 @@
           <include name="extentClose"/>
           <include name="tearDown"/>
           <include name="afterMethod"/>
-          <include name="verifyLogin"/>
+          <include name="verifyLogin" invocation-numbers="1 2"/>
           <include name="beforePrint"/>
         </methods>
       </class> <!-- userTest.VerifyLogin -->

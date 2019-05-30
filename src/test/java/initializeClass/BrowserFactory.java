@@ -17,9 +17,10 @@ public class BrowserFactory
 		if(browser.equalsIgnoreCase("chrome"))	
 		{
 			System.setProperty("webdriver.chrome.driver", "E:\\Parthiban Sys\\selenium files\\browser drivers\\Chrome New\\chromedriver.exe");
-			ChromeOptions options=new ChromeOptions();
-			options.addArguments("--headless");
-			driver=new ChromeDriver(options);	
+			//ChromeOptions options=new ChromeOptions();
+			//options.addArguments("--headless");
+			
+			driver=new ChromeDriver();	
 		}
 		
 		else if(browser.equalsIgnoreCase("firefox"))	
@@ -33,6 +34,4 @@ public class BrowserFactory
 		return driver;	
 	}
 	
-	
-
 }
