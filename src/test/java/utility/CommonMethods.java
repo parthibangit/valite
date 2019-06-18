@@ -1,8 +1,12 @@
 package utility;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import initializeClass.Initial;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -36,18 +40,27 @@ public class CommonMethods extends Initial
 	
 	public void navigateToUser() throws Exception
 	{
-		Thread.sleep(3000);
-		userLocator.userMenuLocator.click();
+		//Thread.sleep(3000);
+		WebDriverWait wait=new WebDriverWait(globalDriver, 10);
+		wait.until(ExpectedConditions.visibilityOf(userLocator.userMenuLocator)).click();
 		
 	}
 	
-	public void selectRoleAndPerson()
+	public void clickAdd(WebElement element)
 	{
+		WebDriverWait wait=new WebDriverWait(globalDriver, 10);
+		wait.until(ExpectedConditions.visibilityOf(element)).click();
+	}
+	
+	public void selectRoleAndPerson() throws Exception
+	{
+		Thread.sleep(3000);
 		Select roleDrop=new Select(userLocator.roleListLocator);
-		roleDrop.selectByVisibleText("Learning content expert");
+		roleDrop.selectByVisibleText("Content head");
 		
-		Select personDrop=new Select(userLocator.reportPersonLocator);
-		personDrop.selectByVisibleText("Parthiban Subburam (Content head)");
+//		Thread.sleep(3000);
+//		Select personDrop=new Select(userLocator.reportPersonLocator);
+//		personDrop.selectByVisibleText("test admin (Super admin)");
 	}
 	
 	public void enterTextToNames(String firstName, String lastName)
@@ -90,5 +103,52 @@ public class CommonMethods extends Initial
 		act.moveToElement(userLocator.logoutMenuLocator).click().build().perform();
 		wait.until(ExpectedConditions.visibilityOf(userLocator.logoutLocator)).click();
 	}
-		
+	
+	public void getEmailColumnValues(String email) throws Exception
+	{
+		Thread.sleep(3000);
+		List<String> list=new ArrayList<String>();
+		for(int i=0; i<userLocator.emailColumnLocator.size(); i++)
+		{
+			WebElement element=userLocator.emailColumnLocator.get(i);
+			list.add(element.getText());
+			
+			int index=list.indexOf(email);
+			
+			if(list.contains(email))
+			{
+				System.out.println("User added in list");
+				
+				for(int j=index; j<userLocator.deleteUserLocator.size(); j++)
+				{
+					WebElement element1=userLocator.deleteUserLocator.get(index);
+					if(element1 != null)
+					{
+					   element1.click();
+					   Thread.sleep(2000);
+					   userLocator.confirmLocator.click();
+					   break;
+					}
+				}
+				
+				break;
+			}
+				
+		}
+	}		
+	
+	public void searchUser(String email) throws Exception
+	{
+	
+		  Thread.sleep(2000);
+		  userLocator.searchBoxLocator.sendKeys(email);
+		  
+		  String actual_text=userLocator.afterDeleteEmailLocator.getText();
+		  String Expected_text="There is no data to display";
+		  
+		  Assert.assertEquals(actual_text, Expected_text, "Text not displayed - Test case failed");
+		  System.out.println("Deleted user not displayed");
+			  
+	}
+	
 }

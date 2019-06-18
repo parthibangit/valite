@@ -1,5 +1,7 @@
 package pagesAdmin;
 
+import java.util.List;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -21,31 +23,49 @@ public class UserPage
 	@FindBy(how=How.XPATH, using="//li[contains(text(),'Logout')]")
 	public WebElement logoutLocator;
 	
-	@FindBy(how=How.ID, using="//span[@class='MuiTypography-root-152 MuiTypography-subheading-159 MuiListItemText-primary-149'][contains(text(),'Users')]")
-	public WebElement userMenuLocator;;
+	@FindBy(how=How.XPATH, using="//span[contains(text(),'Users')]")
+	public WebElement userMenuLocator;
 	
-	@FindBy(how=How.ID, using="//select[@title='Role is required']")
+	@FindBy(how=How.XPATH, using="//span[contains(text(),'Add User')]")
+	public WebElement addUserLocator;
+	
+	@FindBy(how=How.XPATH, using="//select[@title='Role is required']")
 	public WebElement roleListLocator;
 	
-	@FindBy(how=How.ID, using="//select[@class='form-control text-capitalize']//option[@value='nodata']")
+	@FindBy(how=How.XPATH, using="//select[@class='form-control text-capitalize' and @xpath=1]")
 	public WebElement reportPersonLocator;
 	
 	@FindBy(how=How.NAME, using="first_name")
 	public WebElement firstNameLocator;
 	
-	@FindBy(how=How.NAME, using="//input[@type='text'][@xpath='1']")
+	@FindBy(how=How.XPATH, using="(//input[@type='text'])[last()-1]")
 	public WebElement lastNameLocator;
 	
-	@FindBy(how=How.NAME, using="//div[3]//div[1]//div[1]//div[3]//div[1]//div[1]//input[1]")
+	@FindBy(how=How.XPATH, using="(//input[@type='text'])[last()]")
 	public WebElement emailLocator;
 	
-	@FindBy(how=How.NAME, using="//input[@type='number']")
+	@FindBy(how=How.XPATH, using="//input[@type='number']")
 	public WebElement mobileLocator;
 	
-	@FindBy(how=How.ID, using="//span[contains(text(), 'Save')]")
+	@FindBy(how=How.XPATH, using="//span[contains(text(), 'Save')]")
 	public WebElement saveButtonLocator;
 	
-	@FindBy(how=How.ID, using="//span[contains(text(), 'Cancel')]")
+	@FindBy(how=How.XPATH, using="//span[contains(text(), 'Cancel')]")
 	public WebElement cancelBbuttonLocator;
+	
+	@FindBy(how=How.XPATH, using="//input[@type='text']")
+	public WebElement searchBoxLocator;
+	
+	@FindBy(how=How.XPATH, using="//td[6]")
+	public List<WebElement> emailColumnLocator;
+	
+	@FindBy(how=How.XPATH, using="//td")
+	public WebElement afterDeleteEmailLocator;
+	
+	@FindBy(how=How.XPATH, using="//button[@title='Delete']")
+	public List<WebElement> deleteUserLocator;
+	
+	@FindBy(how=How.XPATH, using="(//button[@type='button'])[last()]")
+	public WebElement confirmLocator;
 	
 }

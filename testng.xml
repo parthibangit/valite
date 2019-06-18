@@ -5,7 +5,7 @@
 
   <test name="Test1">
     <classes>
-      <class name="userTest.VerifyLogin"/>
+      <class name="userTest.UserCreateVerify"/>
     </classes>
   </test> <!-- Test -->
   
