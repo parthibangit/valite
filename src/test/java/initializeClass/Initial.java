@@ -9,9 +9,12 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
+
 import pagesAdmin.LoginPage;
 import pagesAdmin.UserPage;
 import utility.Screenshot;
+
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.markuputils.ExtentColor;
@@ -40,10 +43,11 @@ public class Initial
 		
 	}
 	
-	@BeforeTest(alwaysRun=true)
-	public void initialization()
+	@BeforeTest()
+	@Parameters("getBrowser")
+	public void initialization(String mybrowser)
 	{
-		globalDriver=BrowserFactory.getInstance("chrome", "http://dev.valite.org");
+		globalDriver=BrowserFactory.getInstance(mybrowser, "http://dev.valite.org");
 	    loginLocators=PageFactory.initElements(globalDriver, LoginPage.class);
 	    userLocator=PageFactory.initElements(globalDriver, UserPage.class);
 	}
@@ -82,7 +86,7 @@ public class Initial
 	@AfterTest
 	public void tearDown()
 	{
-		globalDriver.close();
+		globalDriver.quit();
 	}
 	
 	@AfterSuite

@@ -1,15 +1,16 @@
 package initializeClass;
 
 import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class BrowserFactory 
 {
 	
 	static WebDriver driver;
+	
 	
 	public static WebDriver getInstance(String browser, String URL)
 	{
@@ -26,6 +27,8 @@ public class BrowserFactory
 		else if(browser.equalsIgnoreCase("firefox"))	
 		{	
 			System.setProperty("webdriver.gecko.driver", "E:\\Parthiban Sys\\selenium files\\browser drivers\\firefox\\geckodriver.exe");
+			System.setProperty(FirefoxDriver.SystemProperty.DRIVER_USE_MARIONETTE, "true");
+			System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, "C:\\Users\\user\\logs.txt");
 			driver=new FirefoxDriver();
 		}	
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);

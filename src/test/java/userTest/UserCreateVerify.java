@@ -11,7 +11,7 @@ public class UserCreateVerify extends CommonMethods
 	public void createUser() throws Exception
 	{
 	
-		test=extent.createTest("UserCreateVerify").pass("Able to ceate user");
+		test=extent.createTest("Create User").pass("Able to create user");
 		signIn("globalsuperadmin@valite.org", "password");
 		navigateToUser();
 		clickAdd(userLocator.addUserLocator);
@@ -25,14 +25,14 @@ public class UserCreateVerify extends CommonMethods
 	@Test(priority=1)
 	public void deleteUser() throws Exception
 	{
-		test=extent.createTest("deleteUser").pass("Able to view the added user");
+		test=extent.createTest("delete User").pass("Created user deleted successfully");
 		getEmailColumnValues("siam123@test.com");
 	}
 	
 	@Test(priority=2)
 	public void userSearch() throws Exception
 	{
-		test=extent.createTest("usersearch").pass("Able to view the added user");
+		test=extent.createTest("user Search").pass("Deleted user not displayed");
 		searchUser("siam123@test.com");
 	}
 	

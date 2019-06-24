@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
-  <test thread-count="5" name="Default test(failed)">
+<suite thread-count="2" guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="tests">
+  <test thread-count="2" name="chrome test(failed)" parallel="tests">
+    <parameter name="getBrowser" value="chrome"/>
     <classes>
       <class name="userTest.UserCreateVerify">
         <methods>
@@ -11,10 +12,29 @@
           <include name="extentClose"/>
           <include name="tearDown"/>
           <include name="afterMethod"/>
+          <include name="createUser"/>
           <include name="userSearch"/>
           <include name="beforePrint"/>
         </methods>
       </class> <!-- userTest.UserCreateVerify -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- chrome test(failed) -->
+  <test thread-count="2" name="firefox test(failed)" parallel="tests">
+    <parameter name="getBrowser" value="firefox"/>
+    <classes>
+      <class name="userTest.UserCreateVerify">
+        <methods>
+          <include name="reportSetUp"/>
+          <include name="initialization"/>
+          <include name="deleteUser"/>
+          <include name="extentClose"/>
+          <include name="tearDown"/>
+          <include name="afterMethod"/>
+          <include name="createUser"/>
+          <include name="userSearch"/>
+          <include name="beforePrint"/>
+        </methods>
+      </class> <!-- userTest.UserCreateVerify -->
+    </classes>
+  </test> <!-- firefox test(failed) -->
+</suite> <!-- Failed suite [Suite] -->
